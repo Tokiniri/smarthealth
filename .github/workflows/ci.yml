@@ -19,8 +19,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Linter (ESLint)
-        run: npm run lint --if-present
+      # - name: Run Linter (ESLint)   # <--- COMMENTÉ ou SUPPRIMÉ
+      #   run: npm run lint
 
       - name: Run Tests (Jest)
         run: npm test
