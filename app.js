@@ -65,5 +65,5 @@ app.post('/api/medical-bill', (req, res) => {
     resteAPayer
   });
 });
-
+//Nahavita an'le CI de hande ho poschena aloha ny vita
 module.exports = app;
