@@ -18,19 +18,16 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        
-      # - name: Run Linter (ESLint)   # <--- COMMENTÉ ou SUPPRIMÉ
-      #   run: npm run lint
 
-      - name: Run Tests (Jest)
+      - name: Run Tests with coverage
         run: npm test
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v3
+        uses: SonarSource/sonarcloud-github-action@v2
         with:
-            args: >
-              -Dsonar.projectKey=tokenini_smarthealth
-              -Dsonar.organization=tokiniri
-              -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+          args: >
+            -Dsonar.projectKey=tokenini_smarthealth
+            -Dsonar.organization=tokiniri
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
         env:
-            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
