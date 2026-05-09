@@ -21,16 +21,18 @@ jobs:
 
       - name: Run Tests with coverage
         run: npm test
-      - name: List coverage files
-        run: ls -la coverage/ || echo "No coverage folder"
+
+      - name: Debug - Lister les fichiers de couverture
+        run: |
+          ls -la coverage/ || echo "Dossier coverage inexistant"
+          head -5 coverage/lcov.info || echo "Fichier lcov.info introuvable"
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           args: >
-            -Dsonar.projectKey=Tokiniri_smarthealth
+            -Dsonar.projectKey=tokiniri_smarthealth
             -Dsonar.organization=tokiniri
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
-
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
