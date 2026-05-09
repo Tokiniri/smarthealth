@@ -17,8 +17,8 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
-
+        run: npm ci
+        
       # - name: Run Linter (ESLint)   # <--- COMMENTÉ ou SUPPRIMÉ
       #   run: npm run lint
 

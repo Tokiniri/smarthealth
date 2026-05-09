@@ -4,7 +4,7 @@
   "main": "server.js",
 "scripts": {
   "start": "node server.js",
-  "test": "npx jest --coverage",
+  "test": "node node_modules/jest/bin/jest.js --coverage",
   "lint": "npx eslint ."
   },
   "dependencies": {
