@@ -30,6 +30,6 @@ jobs:
         with:
           args: >
             -Dsonar.projectKey=tokenini_smarthealth
-            -Dsonar.organization=tokenini
+            -Dsonar.organization=tokiniri
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
