@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('./app1');
+const app = require('./app');
 
 describe('POST /api/medical-bill', () => {
   test('Consultation base, pas urgence, pas mutuelle', async () => {
